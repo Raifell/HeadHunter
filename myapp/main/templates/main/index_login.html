@@ -1,0 +1,15 @@
+{% extends 'main/form_layout.html' %}
+
+{% block content %}
+    <form method="post">
+        {% csrf_token %}
+        {% for f in form %}
+            <p style="display: flex; justify-content: space-between; gap: 20px;">{{ f.label }} {{ f }}</p>
+            {% if f.errors %}
+                <p style="color: red;">{{ f.errors }}</p>
+            {% endif %}
+        {% endfor %}
+        <input type="submit" value="Confirm">
+    </form>
+    <a href="{% url 'register_page' %}">Register</a>
+{% endblock %}

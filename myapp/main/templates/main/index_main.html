@@ -1,0 +1,29 @@
+{% extends 'main/main_layout.html' %}
+
+{% block content %}
+    <h1>Main</h1>
+    {% for element in data %}
+        {% if element.salary %}
+        {% endif %}
+    {% endfor %}
+<!--    {% if resume %}-->
+<!--        {% for obj in resume %}-->
+<!--            <div class="box">-->
+<!--                <h4 style="text-align: center;">Title: {{ obj.title }}</h4>-->
+<!--                <p>Name: {{ obj.name }}</p>-->
+<!--                <p>Surname: {{ obj.surname }}</p>-->
+<!--                <p>Skils: {{ obj.skills }}</p>-->
+<!--            </div>-->
+<!--        {% endfor %}-->
+<!--    {% endif %}-->
+<!--    {% if vacancy %}-->
+<!--        {% for obj in vacancy %}-->
+<!--            <div class="box">-->
+<!--                <h4 style="text-align: center;">Title: {{ obj.name }}</h4>-->
+<!--                <p>Company: {{ obj.company }}</p>-->
+<!--                <p>Salary: {{ obj.salary }}</p>-->
+<!--            </div>-->
+<!--        {% endfor %}-->
+<!--    {% endif %}-->
+    {{ data }}
+{% endblock %}
