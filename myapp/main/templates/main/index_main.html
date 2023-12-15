@@ -1,29 +1,26 @@
 {% extends 'main/main_layout.html' %}
 
 {% block content %}
-    <h1>Main</h1>
-    {% for element in data %}
-        {% if element.salary %}
-        {% endif %}
-    {% endfor %}
-<!--    {% if resume %}-->
-<!--        {% for obj in resume %}-->
-<!--            <div class="box">-->
-<!--                <h4 style="text-align: center;">Title: {{ obj.title }}</h4>-->
-<!--                <p>Name: {{ obj.name }}</p>-->
-<!--                <p>Surname: {{ obj.surname }}</p>-->
-<!--                <p>Skils: {{ obj.skills }}</p>-->
-<!--            </div>-->
-<!--        {% endfor %}-->
-<!--    {% endif %}-->
-<!--    {% if vacancy %}-->
-<!--        {% for obj in vacancy %}-->
-<!--            <div class="box">-->
-<!--                <h4 style="text-align: center;">Title: {{ obj.name }}</h4>-->
-<!--                <p>Company: {{ obj.company }}</p>-->
-<!--                <p>Salary: {{ obj.salary }}</p>-->
-<!--            </div>-->
-<!--        {% endfor %}-->
-<!--    {% endif %}-->
-    {{ data }}
+    <h1 style="margin: 20px auto; width: 30vw; text-align: center; border-bottom: 2px solid #1c1c1c;">{{ title }}</h1>
+    {% if data.resume %}
+        {% for obj in data.resume %}
+            <div class="box">
+                <h4 style="text-align: center;">Title: {{ obj.title }}</h4>
+                <p>Name: {{ obj.name }}</p>
+                <p>Surname: {{ obj.surname }}</p>
+                <p>Skils: {{ obj.skills }}</p>
+                <p style="text-align: end"><a href="{% url 'resume_page' obj.slug %}">More info...</a></p>
+            </div>
+        {% endfor %}
+    {% endif %}
+    {% if data.vacancy %}
+        {% for obj in data.vacancy %}
+            <div class="box">
+                <h4 style="text-align: center;">Title: {{ obj.name }}</h4>
+                <p>Company: {{ obj.company }}</p>
+                <p>Salary: {{ obj.salary }}</p>
+                <p style="text-align: end"><a href="{% url 'vacancy_page' obj.slug %}">More info...</a></p>
+            </div>
+        {% endfor %}
+    {% endif %}
 {% endblock %}

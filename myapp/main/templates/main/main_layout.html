@@ -14,7 +14,7 @@
     <section class="navi">
         <ul>
             <li><a href="{% url 'main_page' %}">Home</a></li> |
-            <li><a href="">{{ create.name }}</a></li> |
+            <li><a href="{% url create.path %}">{{ create.name }}</a></li> |
             <li><a href="">{{ list.name }}</a></li>
         </ul>
         <ul>

@@ -1,0 +1,18 @@
+{% extends 'main/main_layout.html' %}
+
+{% block content %}
+    <h1 style="margin: 20px auto; width: 30vw; text-align: center; border-bottom: 2px solid #1c1c1c;">{{ title }}</h1>
+    <div class="box">
+        <h4 style="text-align: center;">Title: {{ data.title }}</h4>
+        <p>Name: {{ data.name }}</p>
+        <p>Surname: {{ data.surname }}</p>
+        <p>Patronymic: {{ data.patronymic }}</p>
+        <p>Birthdate: {{ data.birthdate }}</p>
+        <p>Email: {{ data.email }}</p>
+        <p>Skills: {{ data.skills }}</p>
+        <p>Experience: {{ data.experience }}</p>
+        <p>Education: {{ data.education }}</p>
+        <p>User: {{ data.user.username }}</p>
+        <p style="text-align: end"><a href="{% url 'main_page' %}">Back</a></p>
+    </div>
+{% endblock %}

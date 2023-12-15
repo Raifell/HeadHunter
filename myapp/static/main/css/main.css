@@ -43,3 +43,16 @@ body{
     border-radius: 24px;
     background: bisque;
 }
+.content form{
+    margin: 20px auto;
+    padding: 20px;
+    border-radius: 24px;
+    background: bisque;
+    display: flex;
+    flex-direction: column;
+}
+.content form p{
+    display: flex;
+    justify-content: space-between;
+    gap: 20px;
+}
