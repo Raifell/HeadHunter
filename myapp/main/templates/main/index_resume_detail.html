@@ -13,6 +13,12 @@
         <p>Experience: {{ data.experience }}</p>
         <p>Education: {{ data.education }}</p>
         <p>User: {{ data.user.username }}</p>
-        <p style="text-align: end"><a href="{% url 'main_page' %}">Back</a></p>
+        <p style="text-align: end">
+            <a href="{% url 'main_page' %}">Back</a>
+            {% if not user.is_staff %}
+                | <a href="{% url 'update_resume_page' data.slug %}">Update</a>
+                | <a href="{% url 'delete_resume_page' data.slug %}">Delete</a>
+            {% endif %}
+        </p>
     </div>
 {% endblock %}

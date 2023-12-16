@@ -3,7 +3,8 @@
 {% block content %}
     <form method="post">
         {% csrf_token %}
-        {{ form.as_p }}
-        <input type="submit" value="Submit">
+        <p>Delete Resume?</p>
+        <input type="submit" value="Delete">
     </form>
+    <a href="{% url 'resume_page' data.slug %}">Back</a>
 {% endblock %}

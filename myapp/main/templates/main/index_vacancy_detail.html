@@ -10,6 +10,12 @@
         <p>Duty: {{ data.duty }}</p>
         <p>Address: {{ data.address }}</p>
         <p>Employer: {{ data.user.username }}</p>
-        <p style="text-align: end"><a href="{% url 'main_page' %}">Back</a></p>
+        <p style="text-align: end">
+            <a href="{% url 'main_page' %}">Back</a>
+            {% if user.is_staff %}
+                | <a href="{% url 'update_vacancy_page' data.slug %}">Update</a>
+                | <a href="{% url 'delete_vacancy_page' data.slug %}">Delete</a>
+            {% endif %}
+        </p>
     </div>
 {% endblock %}

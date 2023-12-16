@@ -1,0 +1,13 @@
+{% extends 'main/main_layout.html' %}
+
+{% block content %}
+    <h1 style="margin: 20px auto; width: 30vw; text-align: center; border-bottom: 2px solid #1c1c1c;">{{ title }}</h1>
+    {% for obj in data %}
+            <div class="box">
+                <h4 style="text-align: center;">Title: {{ obj.name }}</h4>
+                <p>Company: {{ obj.company }}</p>
+                <p>Salary: {{ obj.salary }}</p>
+                <p style="text-align: end"><a href="{% url 'vacancy_page' obj.slug %}">More info...</a></p>
+            </div>
+        {% endfor %}
+{% endblock %}
